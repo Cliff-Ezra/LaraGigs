@@ -33,6 +33,14 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 // Store Listing Data
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Show Edit Form (using route model binding)
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update Listing Data
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 
 
 // Single Listing
