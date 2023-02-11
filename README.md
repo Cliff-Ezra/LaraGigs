@@ -13,7 +13,7 @@ Laragigs is a web application for finding and posting gigs. It is built with Lar
 
 - View a list of all job listings
 
-![Home Page](/readme_resources/Edit_Gig.png)
+![Home Page](/readme_resources/Home.png)
 
 - Create a user account and log into the application
 
