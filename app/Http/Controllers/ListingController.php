@@ -16,7 +16,7 @@ class ListingController extends Controller
     }
 
     // Show single listing
-    public function show(Listing $listing){
+    public function show(Listing $listing) {
         return view('listings.show', [
             'listing' => $listing
         ]);
@@ -29,6 +29,7 @@ class ListingController extends Controller
 
     // Store new listing data
     public function store(Request $request) {
+        // dd($request->file('logo'));
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required', Rule::unique('listings', 'company')],
@@ -38,6 +39,10 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
+
+        if($request->hasFile('logo')) {
+            $formFields['logo'] = $request->file('logo')->store('logos', 'public');
+        }
         
         Listing::create($formFields);
 

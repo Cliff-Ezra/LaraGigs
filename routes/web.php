@@ -22,7 +22,7 @@ use App\Http\Controllers\ListingController;
 // show - Show single listing
 // edit - Show form to edit listing
 // update - Update listing
-// destroy - Delete listing  
+// destroy - Delete listing
 
 // All Listings
 Route::get('/', [ListingController::class, 'index']);
